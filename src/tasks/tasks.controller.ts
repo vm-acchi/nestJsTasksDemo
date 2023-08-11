@@ -20,9 +20,9 @@ export class TasksController {
         this.tasksServices.deleteTasks(id)
     }
 
-    @Patch()
+    @Patch(':id')
     updateTask(@Param('id') id: string, @Body() updateFields: UpdateTaskDto  ){
-        this.tasksServices.updateTasks
+        this.tasksServices.updateTasks(id, updateFields)
     }
     
 }
